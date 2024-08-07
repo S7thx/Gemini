@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+</head>
+
+<body>
+    <div id="container">
+        <textarea rows="45" cols="100" readonly id="resposta"></textarea>
+        <textarea id="pergunta"></textarea>
+        <button type="submit" id="button">Enviar</button>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
