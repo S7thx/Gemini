@@ -20,4 +20,25 @@ async function run() {
     const response = await result.response;
     const text = response.text();
     resposta.value = text;
+    fetch("http://localhost:3000/mensagem", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ mensagem: prompt })
+    })
+    fetch("http://localhost:3000/mensagem", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ mensagem: text })
+    })
+    fetch("https://api.ipify.org?format=json").then((data) => {
+        data.json();
+    }).then((res) => {
+        console.log(res)
+    })
 }
