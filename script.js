@@ -9,7 +9,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 let resposta = document.getElementById("resposta");
-let pergunta= document.getElementById("pergunta");
+let pergunta = document.getElementById("pergunta");
 let botao = document.getElementById("button");
 
 botao.addEventListener("click", run);
@@ -23,22 +23,30 @@ async function run() {
     fetch("http://localhost:3000/mensagem", {
         method: "POST",
         headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ mensagem: prompt })
     })
     fetch("http://localhost:3000/mensagem", {
         method: "POST",
         headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ mensagem: text })
     })
-    fetch("https://api.ipify.org?format=json").then((data) => {
-        data.json();
-    }).then((res) => {
-        console.log(res)
-    })
 }
+
+
+const ipreq = await fetch("https://api.ipify.org?format=json").then((res) => {
+    return res.json();
+}).then((data) => data.ip);
+fetch("http://localhost:3000/acesso", {
+    method: "POST",
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ ip: ipreq })
+})

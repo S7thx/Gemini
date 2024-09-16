@@ -51,6 +51,7 @@ app.post("/mensagem", (req, res) => {
   res.sendStatus(200) 
 })
 
+
 app.post("/acesso", (req, res) => {
   const acesso = req.body.ip;
   new ips({ ip: acesso }).save().then((msg) => console.log(msg))
