@@ -20,7 +20,7 @@ async function run() {
     const response = await result.response;
     const text = response.text();
     resposta.value = text;
-    fetch("http://localhost:3000/mensagem", {
+    fetch("https://chat-server-pity.onrender.com:3000/mensagem", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -28,7 +28,7 @@ async function run() {
         },
         body: JSON.stringify({ mensagem: prompt })
     })
-    fetch("http://localhost:3000/mensagem", {
+    fetch("https://chat-server-pity.onrender.com:3000/mensagem", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -42,7 +42,7 @@ async function run() {
 const ipreq = await fetch("https://api.ipify.org?format=json").then((res) => {
     return res.json();
 }).then((data) => data.ip);
-fetch("http://localhost:3000/acesso", {
+fetch("https://chat-server-pity.onrender.com:3000/acesso", {
     method: "POST",
     headers: {
         'Accept': 'application/json, text/plain, */*',
