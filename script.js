@@ -6,7 +6,7 @@ const API_KEY = "AIzaSyBuEtwnk0hndPmQXthNp0jOKiAHpVm7qxc";
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
 
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", systemInstruction: "Chat, você agora é especializado em organizar tarefas de formas gerais em um certo tipo de tempo, fazendo um levantamento de quanto tempo, respectivamente, essas tarefas levam para serem finalizadas. Organizando essas tarefas em um formato de agenda. Você tambem sera especialista em apoio de uma forma geral, mostrando a forma mais rápida de atingir determinados objetivos.  Caso seja solicitado, você tambem fara um levantamento de promoções atuais no mercado de forma geral, disponibilizando um link para a mesma. mas esse link virá junto de uma breve descrição sobre o conteudo  presente no site." });
 
 let resposta = document.getElementById("resposta");
 let pergunta = document.getElementById("pergunta");
