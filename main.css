@@ -1,37 +1,99 @@
-html, body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: black ;
-}
-
+/* Reset */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-#container{
-    display: table;
-    margin: 1rem auto;  
-    background-color: rgb(66, 65, 65);
-    padding: 1rem;
-    border-radius: 0.512em;
-    height: fit-content;
-    width: 300px;
-}
-#pergunta{
-    width: 100%;
-    background-color: grey;
-}
-textarea{
-    resize: none;
-    color: white;
-    cursor: default;
 
+/* Body and HTML */
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
 }
-#perguntaid{
-    display:flex;
-    gap: 5px;
+
+/* Container */
+#container {
+    flex: 1; /* Occupy remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+    padding: 0 4rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
-#resposta{
-    background-color: grey;
-    padding: 0.6rem;
-    cursor: default;
+
+#container h1 {
+    padding: 4rem;
+}
+
+#container2 {
+    display: table;
+    margin: auto;
+    width: 90%;
+}
+
+/* Textarea Styles */
+textarea {
+    width: 100%;
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+#perguntaid {
+    display: flex;
+    gap: 10px;
+}
+
+/* Button Styles */
+button {
+    background-color: #7f37c9;
+    border: none;
+    color: #ffffff;
+    height: fit-content;
+    padding: 1.10rem;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6a2cb1;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+#footer_content h1 {
+    margin-bottom: 0.5rem;
+}
+
+#footer_content p {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    #container {
+        padding: 1rem;
+    }
 }
