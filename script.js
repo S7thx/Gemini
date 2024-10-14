@@ -38,15 +38,20 @@ async function run() {
     })
 }
 
+async function getIP() {
+    const ipreq = await fetch("https://api.ipify.org?format=json").then((res) => {
+        return res.json();
+    }).then((data) => data.ip);
+    return ipreq;
+}
 
-const ipreq = await fetch("https://api.ipify.org?format=json").then((res) => {
-    return res.json();
-}).then((data) => data.ip);
+const ip = getIP();
+
 fetch("https://chat-server-pity.onrender.com:3000/acesso", {
     method: "POST",
     headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ ip: ipreq })
+    body: JSON.stringify({ ip: ip })
 })
