@@ -94,6 +94,14 @@ footer {
 /* Responsive Design */
 @media screen and (max-width: 600px) {
     #container {
-        padding: 1rem;
+        width: calc(100% - 1rem);
+        padding: 0 1rem !important;
+    }
+    #container h1 {
+        padding: 1rem 0 !important;
+        text-wrap: nowrap;
+        font-size: 8vw;
     }
 }
+
+
